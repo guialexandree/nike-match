@@ -1,5 +1,6 @@
-import { setupApp } from './config/app'
-import env from './config/env'
+require('module-alias/register')
+import { setupApp } from '@/main/config/app'
+import env from '@/main/config/env'
 
 try {
 	setupApp()
