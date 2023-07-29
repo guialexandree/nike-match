@@ -1,11 +1,10 @@
 import express, { type Express } from 'express'
 import setupRoutes from '../config/router'
-import env from '../config/env'
+import setupServices from '../config/services'
 
-export const setupApp = async (): Promise<Express> => {
+export const setupApp = (): Express => {
 	const app = express()
 	setupRoutes(app)
-	app.listen(400, () => { console.log(`Server running at port ${env.port}`)})
-
+	setupServices()
 	return app
 }

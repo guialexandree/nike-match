@@ -1,6 +1,11 @@
-import { setupApp } from '../main/config/app'
+import { setupApp } from './config/app'
+import env from './config/env'
 
-setupApp()
-	.then(() => {})
-	.catch(console.error)
-
+try {
+	setupApp()
+	.listen(env.port, () => {
+		console.log(`Server running at port ${env.port}`)
+	})
+} catch (error) {
+	console.error(error)
+}
