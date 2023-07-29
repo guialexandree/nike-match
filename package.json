@@ -1,0 +1,31 @@
+{
+  "name": "nike-match",
+  "version": "1.0.0",
+  "description": "Projeto com microserviços que realizam a busca no site na nikebr de acordo com filtros específicados previamente e verificar a disponibilidade dos produtos filtrados",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/main/server.js",
+    "dev": "sucrase-node src/main/server.ts",
+		"dev:debug": "nodemon --watch ./dist --inspect --nolazy dist/main/server.js",
+		"prebuild": "rimraf dist",
+		"build": "tsc"
+  },
+  "keywords": [],
+  "author": "Guilherme Alexandre Rocha Pereira",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "node-cron": "^3.0.2",
+    "nodemon": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.4.5",
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "@typescript-eslint/parser": "^6.2.0",
+    "eslint": "^8.46.0",
+    "sucrase": "^3.34.0",
+    "typescript": "^5.1.6"
+  }
+}
