@@ -1,3 +1,5 @@
 node_modules
 dist
-./package-lock.json
+package-lock.json
+src/main/config/database.db
+.wwebjs_cache
