@@ -5,5 +5,9 @@ import env from '@/main/config/env'
 
 export const makeLoadProductFactory = (): LoadProduct => {
 	const httpClient = makeAxiosHttpClient()
-	return new RemoteLoadProduct(env.urlProductNike, httpClient)
+	return new RemoteLoadProduct(
+		env.urlProductNike,
+		env.urlNike,
+		httpClient
+		)
 }
