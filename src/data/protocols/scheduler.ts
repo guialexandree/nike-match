@@ -3,9 +3,6 @@ export interface Scheduler {
 }
 
 export namespace Scheduler {
-	export type Params =  {
-		url: string
-		seconds?: number
-	}
+	export type Params = () => void
 	export type Result = void
 }
