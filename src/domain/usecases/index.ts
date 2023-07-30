@@ -1,2 +1,2 @@
 export * from './load-product'
-export * from './update-product'
+export * from './check-product-availability'
