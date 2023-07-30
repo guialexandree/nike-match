@@ -40,7 +40,6 @@ export class RemoteLoadProduct implements LoadProduct {
 			discount: productNikeResult.priceInfos.discount || 0,
 			images: images || []
 		}
-		console.log(product)
 
 		return product
 	}
