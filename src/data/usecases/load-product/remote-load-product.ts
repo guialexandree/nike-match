@@ -4,14 +4,15 @@ import { HttpClient, HttpRequest, HttpStatusCode } from '@/data/protocols'
 
 export class RemoteLoadProduct implements LoadProduct {
 	constructor(
-		private readonly urlBase: string,
+		private readonly urlProduct: string,
+		private readonly urlNike: string,
 		private readonly httpClient: HttpClient<ProductNikeModel>
 		) {}
 
 	async load (params: LoadProduct.Params): Promise<ProductModel> {
 		const request: HttpRequest = {
 			method: 'get',
-			url: `${this.urlBase}/${params.url}`
+			url: `${this.urlProduct}/${params.url}`
 		}
 
 		const { statusCode, body } = await this.httpClient.request(request)
@@ -38,7 +39,8 @@ export class RemoteLoadProduct implements LoadProduct {
 			value: productNikeResult.priceInfos.price,
 			valueDescription: productNikeResult.priceInfos.priceFormatted,
 			discount: productNikeResult.priceInfos.discount || 0,
-			images: images || []
+			images: images || [],
+			url: `${this.urlNike}${productNikeResult.url}?cor=${productNikeResult.colorInfo.code}`
 		}
 
 		return product

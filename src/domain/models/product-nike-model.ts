@@ -3,6 +3,7 @@ export type ProductNikeModel = {
 		product: {
 			name: string
 			code: string
+			url: string
 			sizes: Array<{
 				description: string
 				hasStock: boolean
@@ -16,7 +17,10 @@ export type ProductNikeModel = {
 			images: Array<{
 				order: number
 				url: string
-			}>
+			}>,
+			colorInfo: {
+				code: string
+			}
 		}
 	}
 }
