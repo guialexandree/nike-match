@@ -6,4 +6,5 @@ export type ProductModel = {
 	valueDescription: string
 	discount: number
 	images: string[]
+	url: string
 }
